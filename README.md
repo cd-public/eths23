@@ -1,4 +1,4 @@
-# DATA 352W Fall 2023 Course Repository 
+# DATA 352W Spring 2023 Course Repository 
 ## Repository Manager
 [cd-public](https://cd-public.github.io/)
 ## Contributors
