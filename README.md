@@ -11,6 +11,7 @@
 [rtstrob](https://rtstrob.github.io/)
 [mvanslyke](https://mvanslyke.github.io/)
 [Destinyacevedo](https://destinyacevedo.github.io/)
+[dataethically](https://dataethically.github.io)
 [Egfia83](https://egfia83.github.io/)
 [aweirth](https://aweirth.github.io/)
 [shouvikantu](https://shouvikantu.github.io/)
