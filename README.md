@@ -8,5 +8,7 @@
 [simonstein18](https://simonstein18.github.io)
 [pmcslarrow](https://pmcslarrow.github.io/)
 [rtstrob](https://rtstrob.github.io/)
+[mvanslyke](https://mvanslyke.github.io/)
 [Destinyacevedo](https://destinyacevedo.github.io/)
 [aweirth](https://aweirth.github.io/)
+[shouvikantu](https://shouvikantu.github.io/)
