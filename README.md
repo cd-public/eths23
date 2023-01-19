@@ -9,3 +9,4 @@
 [pmcslarrow](https://pmcslarrow.github.io/)
 [rtstrob](https://rtstrob.github.io/)
 [Destinyacevedo](https://destinyacevedo.github.io/)
+[dataethically](https://dataethically.github.io)
