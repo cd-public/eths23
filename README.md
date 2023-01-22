@@ -15,4 +15,5 @@
 [dataethically](https://dataethically.github.io)
 [aweirth](https://aweirth.github.io/)
 [shouvikantu](https://shouvikantu.github.io/)
+[wtreeves](https://treeves-eth23.github.io/)
 [arvpsdvj](https://arvpsdvj.github.io/)
