@@ -15,3 +15,4 @@
 [dataethically](https://dataethically.github.io)
 [aweirth](https://aweirth.github.io/)
 [shouvikantu](https://shouvikantu.github.io/)
+[cfwiebe](https://cfwiebe.github.io/)
