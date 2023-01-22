@@ -3,6 +3,7 @@
 [cd-public](https://cd-public.github.io/)
 ## Contributors
 [Zagreb](https://zagreb-ethf23.github.io/)
+[Martinez](https://martinez-D352W.github.io/)
 [Haydenvaughn](https://Haydenvaughn.github.io)
 [Ciel Morrill](https://cielmorrill.github.io/)
 [mugwortlover](https://mugwortlover.github.io)
