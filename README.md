@@ -29,5 +29,5 @@
 [MaryR0se](https://maryr0se.github.io/)
 [barocioj](https://barocioj.github.io/)
 [cfwiebe](https://cfwiebe.github.io/)
-[SaukIfshin](htps://saul1310.github.io)
+[SaulIfshin](https://saul1310.github.io)
 [WideningGyre](https://wideninggyre.github.io)
