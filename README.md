@@ -18,6 +18,7 @@
 [shouvikantu](https://shouvikantu.github.io/)
 [wtreeves](https://treeves-eth23.github.io/)
 [arvpsdvj](https://arvpsdvj.github.io/)
+[magrathea](https://magrathea-data352.github.io/)
 [leoaadams](https://leoaadams.github.io/)
 [maretheu](https://maretheu.github.io/)
 [DougTii](https://DougTii.github.io/)
