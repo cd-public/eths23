@@ -18,6 +18,7 @@
 [shouvikantu](https://shouvikantu.github.io/)
 [wtreeves](https://treeves-eth23.github.io/)
 [arvpsdvj](https://arvpsdvj.github.io/)
+[DougTii](https://DougTii.github.io/)
 [ethicalagentkr](https://ethicalagentkr.github.io/)
 [iGoober](https://igoober.github.io/)
 [MaryR0se](https://maryr0se.github.io/)
