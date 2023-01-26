@@ -27,6 +27,7 @@
 [ethicalagentkr](https://ethicalagentkr.github.io/)
 [iGoober](https://igoober.github.io/)
 [MaryR0se](https://maryr0se.github.io/)
+[barocioj](https://barocioj.github.io/)
 [cfwiebe](https://cfwiebe.github.io/)
 [SaukIfshin](htpps://saul1310.github.io)
 [WideningGyre](https://wideninggyre.github.io)
