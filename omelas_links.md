@@ -2,7 +2,7 @@
 [Haydenvaughn](https://Haydenvaughn.github.io/omelas.html)<br>
 [Ciel Morrill](https://cielmorrill.github.io/omelas.html)<br>
 [mugwortlover](https://mugwortlover.github.io/omelas.html)<br>
-[simonstein18](https://github.com/simonstein18/simonstein18.github.io/omelas.html)<br>
+[simonstein18](https://simonstein18.github.io/omelas.html)<br>
 [pmcslarrow](https://pmcslarrow.github.io/omelas.html)<br>
 [rtstrob](https://rtstrob.github.io/omelas.html)<br>
 [mvanslyke](https://mvanslyke.github.io/omelas.html)<br>
