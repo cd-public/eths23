@@ -39,7 +39,9 @@ Mining LTL properties of hardware is an important problem, and I am glad to see 
 3: (strong accept)
 Security critical assertions are powerful assets for exposing security vulnerabilities but it takes a lot of expertise and manual efforts to compose. Assertion mining is a novel way to facilitate the development of security critical assertions. The proposed method is interesting and relevant. It will be good if experiments with artificially injected bugs can show the effectiveness of the generated assertions.
 
-# Scheduling Reviews (This is basically a linear programming multiprocessor OS scheduler)
+# Scheduling Reviews
+
+(This is basically a linear programming multiprocessor OS scheduler)
 
 ## 1
 
