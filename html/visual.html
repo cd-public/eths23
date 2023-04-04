@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Events for Visualization</title>
+		<script>
+			let size = 400 ;
+			let range = 4 ;
+			let cx = 0 ;
+			let cy = 0 ;
+			let ctx ;
+			
+			document.addEventListener('keydown', keybind);
+			
+			function keybind()
+			{
+				switch (event.key) {
+					case "a":
+						cx = cx - (range / 4) ;
+						break ;
+					case "d":
+						cx = cx + (range / 4) ;
+						break ;
+					case "w":
+						cy = cy + (range / 4) ;
+						break ;
+					case "s":
+						cy = cy - (range / 4) ;
+						break ;
+					case "p":
+						range = range * 2 ;
+						break ;
+					case "m":
+						range = range / 2 ;
+						break ;
+					case "h":
+					case "r":
+					case "d":
+						size = 400 ;
+						range = 4 ;
+						cx = 0 ;
+						cy = 0 ;
+						break ;
+				}
+				draw()
+			}
+			
+			function f(x) 
+			{
+				return Math.log(x+1) ;
+			}
+			// size in pixels, range in reals
+			function draw() 
+			{
+				// declare vars
+				const plot = document.getElementById("plot") ;
+				const ks = [] ;
+				const half = size / 2  ;
+				const full = 2 * range ;
+				let x, y, i, j, k, px, py;
+				// find axes
+				px = ((range - cx) / full) * size ;
+				py = ((cy + range) / full) * size ;
+				px = px < 0 ? 0 : px > size ? size : px ;
+				px = px > size ? size : px ;
+				py = py < 0 ? 0 : py > size ? size : py ;
+				if (plot.getContext) { // this is just best practice
+					const ctx = plot.getContext("2d");	
+					ctx.clearRect(0, 0, size, size);
+					// draw axes
+					ctx.fillStyle = "dimgrey";	
+					ctx.fillRect(px, 0, 1, size) ;
+					ctx.fillRect(0, py, size, 1) ;
+					for (i = 0 ; i < size ; i += (size / (range * 2)) )
+					{
+							ctx.fillRect(px, i, 3,  1) ;
+							ctx.fillRect(i, cy, 1, -2) ;
+					}
+					// plot
+					ctx.fillStyle = "black";
+					// calculate vertical value in each column
+					// we do this off by one to help with bounds
+					for (i = -1 ; i < size + 1 ; i++ )
+					{
+						x = (i /   size) * full - range + cx ;
+						console.log(i.toString() + " " + x.toString())
+						y = f(x) ;
+						k = ((range + cy - y) / full) * size ;
+						ks.push(k)
+					}
+					for (i = 0 ; i < size ; i++ )
+					{
+						for (j = 0 ; j < size ; j++ )
+						{
+							// ensure shading when slope < 1 - we fill at least one pixel for each row
+							// remember ks is off by one!
+							if (Math.abs(j - ks[i + 1]) < 1)
+							{
+								ctx.fillRect(i, j, 1, 1) ;
+							}
+							// ensure shading when slope > 1 - we fill at least one pixel for each column
+							// remember ks is off by one!
+							if (Math.abs(j - ks[i+1]) < Math.min(Math.abs(j - ks[i]),Math.abs(j - ks[i+2])))
+							{
+								ctx.fillRect(i, j, 2, 2) ;
+							}
+						}
+					}	
+				}
+			}
+		</script>
+		<style>
+			canvas {
+				border: 1px solid dimgrey;
+			}
+		</style>
+	</head>
+	<body onload="draw();">
+		<canvas id="plot" width="400" height="400"></canvas>
+		<p>Controls:
+			<ul>
+				<li>'wasd' to scroll</li>
+				<li>'p' and 'm' (plus and minus) to zoom</li>
+				<li>'r', 'h', or 'd' to reset to defaults
+	</body>
+</html>
