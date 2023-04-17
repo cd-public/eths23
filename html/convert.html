@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<body>
+		<script>
+			function ord(c)
+			{
+				let x = c.charCodeAt(0) ;
+				let n = BigInt(x) ;
+				return n ;
+			}
+			
+			
+			function chr(n)
+			{
+				let x = Number(n)
+				let c = String.fromCharCode(x) ;
+				return c ;
+			}
+			
+			function head(s)
+			{
+				return s[0] ;
+			}
+			
+			function tail(s)
+			{
+				return s.substring(1) ;
+			}
+			
+		
+			function textToNum(s)
+			{
+				let v = ord(head(s)) ;
+				let r = tail(s) ;
+				if (r)
+				{
+					let n = textToNum(r) ;
+					v = v + 0x100n * n ;
+				}
+				return BigInt(v) ;
+			}
+			
+			
+			function textToNumG(s)
+			{
+				return BigInt(s.charCodeAt(0))+((s.length>1)?(256n*textToNum(s.substring(1))):0n)
+			}
+			
+			function ttnio()
+			{
+				let input  = document.getElementById("ttnIn") ;
+				let output = document.getElementById("ttnOut") ;
+				output.innerText = textToNum(input.value).toString() ;
+			}
+			
+			function numToText(n)
+			{
+				if (n == 0n)
+				{
+					return '' ;
+				}
+				let v = n % 0x100n ;
+				let r = n / 0x100n ;
+				let c = chr(v) ;
+				let s = numToText(r)
+				return c.concat(s) ;
+			}
+			
+			function nttio()
+			{
+				let input  = document.getElementById("nttIn") ;
+				let output = document.getElementById("nttOut") ;
+				output.innerText = numToText(BigInt(input.value)) ;
+			}
+			
+		</script>
+		<input type="text"  id="ttnIn">
+		<button type="button" onclick="ttnio();">textToNum</button>
+		<p>
+			<output id="ttnOut">textToNum out</output>
+		</p>
+		<input type="text"  id="nttIn">
+		<button type="button" onclick="nttio();">textToNum</button>
+		<p>
+			<output id="nttOut">numToText out</output>
+		</p>
+	</body>
+</html>
