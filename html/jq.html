@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+
+// STOP data
+
+let raceEth = ["Asian/PI", "Black", "Latinx", "Middle Eastern", "Native American", "White"] ;
+
+let stops = 
+	[
+		//["BeavertonPD", 724, 1156, 2466, 341, 54, 8265, 13006],
+		//["ClackamasCOSO", 721, 958, 2354, 252, 178, 13552, 18015],
+		//["EugenePD", 278, 758, 919, 0, 0, 9609, 11564],
+		//["GreshamPD", 94, 312, 450, 30, 7, 1358, 2251],
+		//["HillsboroPD", 365, 366, 1748, 160, 25, 3698, 6362],
+		["Marion", 421, 401, 2616, 146, 12, 10142, 13738],
+		//["MedfordPD", 55, 154, 696, 17, 5, 3284, 4211],
+		["Multnomah", 236, 762, 1016, 94, 27, 4464, 6599],
+		["Oregon", 3316, 4129, 18006, 1669, 746, 100782, 128648],
+		["Portland", 674, 2324, 1564, 186, 74, 8611, 13433],
+		["Salem", 123, 191, 1272, 29, 22, 3123, 4760]
+		//["WashingtonCOSO", 1304, 1163, 5000, 618, 136, 12578, 20799]
+	] ;
+	
+// Census data
+
+let raceOrg = ["Black", "Native American", "Asian/PI", "Latinx", "White"] ;
+	
+let pops = 
+	[
+		["Marion", 16, 28, 37, 282, 634],
+		["Multnomah", 60, 15, 89, 127, 681],
+		["Oregon", 23, 19, 55, 140, 741],
+		["Portland", 56, 9, 90, 104, 688],
+		["Salem", 14, 10, 51, 224, 658]
+	] ;
+	
+// Need census data in stop data order	
+function reorder()
+{
+	let popsNew = [] ;
+	for (let i = 0 ; i < pops.length ; i++)
+	{
+		let pop_New = [] ;
+		pop_New.push(pops[i][0]) ;
+		for (let j = 0 ; j < raceEth.length ; j++)
+		{
+			locj = raceOrg.indexOf(raceEth[j])
+			console.log("help")
+			console.log(raceEth[j])
+			console.log(raceOrg[locj])
+			locj >= 0 ? pop_New.push(pops[i][locj+1]) : pop_New.push(0) ;
+		}
+		popsNew.push(pop_New) ;
+	}
+	return popsNew ;	
+}
+
+pops = reorder()
+
+console.log(pops)
+
+function iToDataPoint(labs,pts,i)
+{
+	let dataPoint = [] ;
+	let formatString = "#,##0\"%\"" ;
+	for (let j = 0 ; j < pts.length ; j++)
+	{
+		dataPoint.push( { label: pts[j][0], y: pts[j][i+1] } ) ;
+	}
+	return {
+			type: "stackedColumn100",
+			name: labs[i],
+			showInLegend: true,
+			yValueFormatString: formatString,
+			dataPoints: dataPoint
+		} ;
+}
+
+function makeData(labs,pts)
+{
+	let data = [] ;
+	// Hack to standardize ordering...
+	for (let i = 0 ; i < labs.length ; i++)
+	{
+		data.push(iToDataPoint(labs,pts,i)) ;
+	}
+	return data ;
+}
+	
+function render() {
+	$("#chartStop").CanvasJSChart({title:{text: "Police Stop Data" }, data: makeData(raceEth,stops)});
+	$("#chartPop_").CanvasJSChart({title:{text: "%Population Data" }, data: makeData(raceEth,pops)});
+}
+</script>
+</head>
+<body onload="render()" >
+<div id="chartStop" style="height: 370px; width: 100%;"></div>
+<br><br><br>
+<div id="chartPop_" style="height: 370px; width: 100%;"></div>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+</body>
+</html>
